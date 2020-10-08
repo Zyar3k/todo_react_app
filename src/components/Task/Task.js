@@ -2,7 +2,7 @@ import React from "react";
 import "./Task.scss";
 
 const Task = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const { text, date, id } = props.task;
 

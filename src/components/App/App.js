@@ -55,10 +55,25 @@ class App extends React.Component {
   };
 
   deleteTask = (id) => {
-    console.log("delete"+id);
+    let tasks = [...this.state.tasks];
+    tasks = tasks.filter((task) => task.id !== id);
+    this.setState({
+      tasks,
+    });
   };
-  changeTaskStatus = (id) => {
-    console.log("change"+id);
+
+  doneTask = (id) => {
+    let tasks = [...this.state.tasks];
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        task.active = false;
+        task.finishDate = new Date().getTime();
+      }
+      this.setState({
+        tasks,
+      });
+    });
+    console.log("change" + id);
   };
   render() {
     return (
@@ -68,7 +83,7 @@ class App extends React.Component {
         <TaskList
           tasks={this.state.tasks}
           delete={this.deleteTask}
-          change={this.changeTaskStatus}
+          change={this.doneTask}
         />
       </div>
     );
