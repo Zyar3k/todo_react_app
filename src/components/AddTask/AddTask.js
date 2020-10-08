@@ -4,9 +4,8 @@ class AddTask extends React.Component {
   minDate = new Date().toISOString().slice(0, 10);
   state = {
     text: "",
+    checked: false,
     date: this.minDate,
-    importantCheck: false,
-    himportantCheck: false,
   };
 
   handleTextChange = (event) => {
@@ -17,12 +16,7 @@ class AddTask extends React.Component {
 
   handleImportantChange = (event) => {
     this.setState({
-      importantCheck: event.target.checked,
-    });
-  };
-  handleHiImportantChange = (event) => {
-    this.setState({
-      himportantCheck: event.target.checked,
+      checked: event.target.checked,
     });
   };
 
@@ -31,9 +25,20 @@ class AddTask extends React.Component {
       date: event.target.value,
     });
   };
-
   handleClick = () => {
-    console.log("test");
+    const { text, checked, date } = this.state;
+    if (text.length > 2) {
+      const add = this.props.add(text, date, checked);
+      if (add) {
+        this.setState({
+          text: '',
+          checked: false,
+          date: this.minDate
+        })
+      }
+    } else {
+      console.log("za krótko");
+    }
   };
   render() {
     let maxDate = this.minDate.slice(0, 4) * 1 + 1;
@@ -43,29 +48,13 @@ class AddTask extends React.Component {
         <input
           type="text"
           placeholder="wpisz coś"
-          value={this.state.value}
+          value={this.state.text}
           onChange={this.handleTextChange}
         />
         <br />
         <label htmlFor="important">
-          <input
-            type="checkbox"
-            name=""
-            id="important"
-            checked={this.state.importantCheck}
-            onChange={this.handleImportantChange}
-          />
+        <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
           Priorytet
-        </label>
-        <label htmlFor="highImportant">
-          <input
-            type="checkbox"
-            name=""
-            id="highImportant"
-            checked={this.state.himportantCheck}
-            onChange={this.handleHiImportantChange}
-          />
-          Wysoki priorytet
         </label>
         <br />
         <label htmlFor="date">

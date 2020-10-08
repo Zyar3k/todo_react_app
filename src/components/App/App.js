@@ -4,6 +4,7 @@ import TaskList from "../TaskList/TaskList";
 import "./App.scss";
 
 class App extends React.Component {
+  counter = 9
   state = {
     tasks: [
       {
@@ -75,11 +76,32 @@ class App extends React.Component {
     });
     console.log("change" + id);
   };
+
+
+  addNewTask = (text, date, important) => {
+    console.log("dodany obiekt");
+    const task = {
+      id: this.counter,
+      text, // tekst z inputa
+      date, //tekst z inputa
+      important, //wartość z inputa
+      active: true,
+      finishDate: null
+    }
+
+    this.counter++;
+    console.log(task, this.counter);
+    this.setState(prevState => ({
+      tasks: [...prevState.tasks, task]
+    }))
+    return true
+
+  }
   render() {
     return (
       <div className="App">
         <h1>ToDO List</h1>
-        <AddTask />
+        <AddTask add={this.addNewTask} />
         <TaskList
           tasks={this.state.tasks}
           delete={this.deleteTask}

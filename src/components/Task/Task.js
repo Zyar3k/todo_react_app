@@ -2,10 +2,8 @@ import React from "react";
 import "./Task.scss";
 
 const Task = (props) => {
-  // console.log(props);
 
-  const importantStyle = { color: "orange" };
-  const highImportantStyle = { color: "red" };
+  const importantStyle = { color: "red" };
 
   const {
     text,
@@ -13,7 +11,6 @@ const Task = (props) => {
     id,
     active,
     important,
-    highImportant,
     finishDate,
   } = props.task;
 
@@ -25,8 +22,6 @@ const Task = (props) => {
           style={
             important
               ? importantStyle
-              : null || highImportant
-              ? highImportantStyle
               : null
           }
         >
