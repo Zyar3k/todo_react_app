@@ -9,19 +9,19 @@ class App extends React.Component {
     tasks: [
       {
         id: 0,
-        text: "Zadanie 0",
-        date: "2020-01-01",
+        text: "Przeczytać 10% książek z mojej listy",
+        date: "2020-12-31",
         highImportant: true,
-        important: false,
+        important: true,
         active: true,
         finishDate: null,
       },
       {
         id: 1,
-        text: "Zadanie 1",
-        date: "2020-02-20",
+        text: "Awansować do LM",
+        date: "2020-12-13",
         highImportant: false,
-        important: true,
+        important: false,
         active: true,
         finishDate: null,
       },
@@ -100,7 +100,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>ToDO List</h1>
+        <h1>Zadania do zrealizowania</h1>
         <AddTask add={this.addNewTask} />
         <TaskList
           tasks={this.state.tasks}

@@ -3,7 +3,7 @@ import "./Task.scss";
 
 const Task = (props) => {
 
-  const importantStyle = { color: "red" };
+  const importantStyle = { background: "green" };
 
   const {
     text,
@@ -27,11 +27,14 @@ const Task = (props) => {
         >
           {text}
         </div>
-        <div className="date">termin-{date}</div>
-        <button onClick={() => props.change(id)}>Zrobione</button>
-        <button onClick={() => props.delete(id)} className="deleteBtn">
-          X
-        </button>
+
+        <div className='utility'>
+          <div className="dateActiv">{date}</div>
+          <button onClick={() => props.change(id)} className='btnDone'>Wykonane</button>
+          <button onClick={() => props.delete(id)} className="deleteBtn">
+            X
+          </button>
+        </div>
       </div>
     );
   } else {

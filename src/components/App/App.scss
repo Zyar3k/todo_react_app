@@ -1,3 +1,20 @@
 .App {
   text-align: center;
+  //   display: flex;
+  // align-items: center;
+
+  // border: 2px solid black;
+  // max-width: 50%;
+  width: 1000px;
+
+  h1 {
+    // background: red;
+    padding: 30px 0;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+    letter-spacing: 8px;
+    color: white;
+    border-bottom: 2px solid silver;
+  }
 }

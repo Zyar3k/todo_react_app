@@ -1,26 +1,61 @@
 .taskBox {
-  background: grey;
+  // background: grey;
   margin: 4px 0;
   display: flex;
   justify-content: space-around;
+  border: 1px solid #464866;
+  border-radius: 6px;
 
   .text {
-    border: 1px solid black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: calc(100% - 240px);
+    // border: 1px solid black;
     padding: 10px;
   }
 
-  .date {
-    border: 1px solid black;
-    padding: 10px;
-  }
+  .utility {
+    display: flex;
+    // width: 20%;
 
-  button {
-    padding: 10px;
-    background: orange;
+    button {
+      border: none;
+      cursor: pointer;
+    }
 
-    &.deleteBtn {
-      background: red;
+    .btnDone {
+      padding: 0 10px;
+      width: 90px;
+      transition: .5s all ease-in-out;
+      background: #29648A;
+      &:hover {
+        background: #2E9CCA;
+        // font-size: 40px;
+      }
+    }
+
+    .deleteBtn {
+      width: 40px;
+      height: 40px;
+      background: rgb(235, 142, 126);
       font-weight: bold;
+      font-size: 20px;
+      color: white;
+      transition: .5s all ease-in-out;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      &:hover {
+        background: red;
+        // font-size: 40px;
+      }
+    }
+
+    .dateActiv {
+      width: 110px;
+      background: silver;
+      background: #464866;
+      padding: 10px;
     }
   }
 }

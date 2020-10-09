@@ -1,7 +1,53 @@
 .activeTasks {
-  background: khaki;
+  // font-family: "Courgette", cursive;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid silver;
+  h2 {
+    border-top: 2px solid silver;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 0;
+    em {
+      color: grey;
+    }
+
+    &:hover {
+      em {
+        color: white;
+      }
+    }
+  }
+
+  .infoRow {
+    display: flex;
+    text-transform: uppercase;
+    border-top: 1px solid silver;
+    border-bottom: 2px solid silver;
+    letter-spacing: 2px;
+    background: #464866;
+
+    div {
+      padding: 10px 0;
+    }
+
+    :first-child {
+      width: calc(100% - 240px);
+    }
+
+    :nth-child(2) {
+      width: 110px;
+      // background: #AAABB8;
+    }
+
+    :last-child {
+      width: 130px;
+    }
+  }
 }
 
 .doneTasks {
   background: silver;
+  font-family: "Amatic SC", cursive;
+  // text-decoration: line-through;
 }
