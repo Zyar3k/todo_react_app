@@ -82,9 +82,9 @@ class App extends React.Component {
     console.log("dodany obiekt");
     const task = {
       id: this.counter,
-      text, // tekst z inputa
-      date, //tekst z inputa
-      important, //wartość z inputa
+      text,
+      date,
+      important,
       active: true,
       finishDate: null
     }

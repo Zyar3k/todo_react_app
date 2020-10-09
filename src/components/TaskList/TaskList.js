@@ -3,9 +3,21 @@ import Task from "../Task/Task";
 import "./TaskList.scss";
 
 const TaskList = (props) => {
-  // console.log(props.tasks.length);
   let activeTasks = props.tasks.filter((task) => task.active);
   let doneTasks = props.tasks.filter((task) => !task.active);
+
+  if(activeTasks.length >=2){
+    activeTasks.sort((a,b) => {
+      a= a.text.toLowerCase();
+      b= b.text.toLowerCase();
+      if (a < b) return -1;
+      if (a > b) return 1;
+        return 0
+    })
+  }
+
+  doneTasks.sort((a,b)=> b.finishDate - a.finishDate);
+
   activeTasks = activeTasks.map((task) => (
     <Task
       key={task.id}
