@@ -1,4 +1,5 @@
 import React from "react";
+import "./AddTask.scss";
 
 class AddTask extends React.Component {
   minDate = new Date().toISOString().slice(0, 10);
@@ -37,40 +38,47 @@ class AddTask extends React.Component {
         })
       }
     } else {
-      console.log("za krótko");
+      console.log("Zadanie jest za krótkie");
     }
   };
   render() {
     let maxDate = this.minDate.slice(0, 4) * 1 + 1;
     maxDate = maxDate + "-12-31";
     return (
-      <div>
-        <input
-          type="text"
-          placeholder="wpisz coś"
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        />
-        <br />
-        <label htmlFor="important">
-        <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
-          Priorytet
-        </label>
-        <br />
-        <label htmlFor="date">
-          Termin wykonania
+      <div className='addTask'>
+
+        <div className="inputWrapper">
           <input
-            type="date"
-            name=""
-            min={this.minDate}
-            max={maxDate}
-            id="date"
-            value={this.state.date}
-            onChange={this.handleDateChange}
+            type="text"
+            placeholder="Twoje zadanie..."
+            value={this.state.text}
+            onChange={this.handleTextChange}
           />
-        </label>
-        <br />
-        <button onClick={this.handleClick}>Add task</button>
+          <label htmlFor="important">
+            <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
+            Ważne zadanie
+          </label>
+        </div>
+
+        <div className='dateWrapper'>
+          <label htmlFor="date">
+            Termin wykonania
+            <input
+              type="date"
+              name=""
+              min={this.minDate}
+              max={maxDate}
+              id="date"
+              value={this.state.date}
+              onChange={this.handleDateChange}
+            />
+          </label>
+        </div>
+
+        <div className="btnWrapper">
+          <button onClick={this.handleClick}>Dodaj zadanie</button>
+        </div>
+
       </div>
     );
   }

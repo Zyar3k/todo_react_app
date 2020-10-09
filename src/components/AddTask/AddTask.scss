@@ -1,0 +1,86 @@
+.addTask {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin: 10px 0;
+  }
+
+  input {
+    height: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px;
+    border: none;
+    background: rgb(210, 215, 240);
+
+    &:focus {
+      color: white;
+      background: rgba(128, 128, 128, 0.486);
+      outline: none;
+      font-weight: bold;
+    }
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .inputWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input[type="text"] {
+      width: 400px;
+    }
+
+    label {
+      cursor: pointer;
+      input {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+      }
+    }
+  }
+
+  .dateWrapper {
+    label {
+      cursor: pointer;
+      input {
+        margin-left: 10px;
+      }
+    }
+
+    &:hover {
+      label {
+        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+      }
+    }
+  }
+
+  .btnWrapper {
+    // background: grey;
+
+    button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background: green;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+
+      &:hover {
+        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+      }
+    }
+  }
+}
