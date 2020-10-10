@@ -1,8 +1,11 @@
 .activeTasks {
-  // font-family: "Courgette", cursive;
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid silver;
+  .addTaskInfo {
+    text-shadow: 0 0 4px black, 0 0 2px white, 0 0 6px white, 0 0 10px white;
+    letter-spacing: 6px;
+  }
   h2 {
     border-top: 2px solid silver;
     text-transform: uppercase;
@@ -39,7 +42,6 @@
 
     :nth-child(2) {
       width: 110px;
-      // background: #AAABB8;
     }
 
     :last-child {
@@ -49,7 +51,8 @@
 }
 
 .doneTasks {
-  background: silver;
-  font-family: "Amatic SC", cursive;
-  // text-decoration: line-through;
+  color: silver;
+  h3 {
+    padding: 10px 0;
+  }
 }

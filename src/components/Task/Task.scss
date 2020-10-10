@@ -19,43 +19,62 @@
     display: flex;
     // width: 20%;
 
-    button {
-      border: none;
-      cursor: pointer;
-    }
-
     .btnDone {
       padding: 0 10px;
       width: 90px;
-      transition: .5s all ease-in-out;
-      background: #29648A;
+      transition: 0.5s all ease-in-out;
+      background: #29648a;
       &:hover {
-        background: #2E9CCA;
-        // font-size: 40px;
+        background: #2e9cca;
       }
     }
 
     .deleteBtn {
-      width: 40px;
-      height: 40px;
-      background: rgb(235, 142, 126);
-      font-weight: bold;
-      font-size: 20px;
-      color: white;
-      transition: .5s all ease-in-out;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
-      &:hover {
-        background: red;
-        // font-size: 40px;
-      }
     }
 
     .dateActiv {
       width: 110px;
-      background: silver;
       background: #464866;
       padding: 10px;
     }
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+.deleteBtn {
+  width: 40px;
+  height: 40px;
+  background: rgb(235, 142, 126);
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  transition: 0.5s all ease-in-out;
+
+  &:hover {
+    background: red;
+  }
+}
+
+.doneTaskBox {
+  border: 1px solid #464866;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  .text {
+    width: calc(100% - 370px);
+  }
+
+  .date {
+    width: 150px;
+  }
+  .confirmDate {
+    width: 220px;
   }
 }

@@ -45,12 +45,12 @@ class App extends React.Component {
       },
       {
         id: 4,
-        text: "Zadanie 4",
-        date: "2020-05-05",
+        text: "Ukończyć aplikację ToDo w React",
+        date: "2020-10-15",
         highImportant: true,
         important: false,
         active: false,
-        finishDate: null,
+        finishDate: '10.10.2020, 18:43:47',
       },
     ],
   };

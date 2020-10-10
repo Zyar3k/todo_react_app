@@ -40,10 +40,10 @@ const Task = (props) => {
   } else {
     const finishTask = new Date(finishDate).toLocaleString();
     return (
-      <div className="taskBox">
+      <div className="doneTaskBox">
         <div className="text">{text}</div>
-        <div className="date">termin -{date}</div>
-        <div className="date">wykonano - {finishTask}</div>
+        <div className="date">Zakładany termin {date}</div>
+        <div className="confirmDate">Potwierdzenie wykonania {finishTask}</div>
         <button onClick={() => props.delete(id)} className="deleteBtn">
           X
         </button>
