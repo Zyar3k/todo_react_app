@@ -1,9 +1,10 @@
+@import "../../settings.scss";
+
 .taskBox {
-  // background: grey;
   margin: 4px 0;
   display: flex;
   justify-content: space-around;
-  border: 1px solid #464866;
+  border: 1px solid $rowDateColor;
   border-radius: 6px;
 
   .text {
@@ -11,21 +12,19 @@
     text-align: center;
     justify-content: center;
     width: calc(100% - 240px);
-    // border: 1px solid black;
     padding: 10px;
   }
 
   .utility {
     display: flex;
-    // width: 20%;
 
     .btnDone {
       padding: 0 10px;
       width: 90px;
-      transition: 0.5s all ease-in-out;
-      background: #29648a;
+      transition: $transition;
+      background: $btnDoneColor;
       &:hover {
-        background: #2e9cca;
+        background: $btnDoneColorHov;
       }
     }
 
@@ -36,8 +35,11 @@
 
     .dateActiv {
       width: 110px;
-      background: #464866;
+      background: $rowDateColor;
       padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -49,19 +51,19 @@ button {
 .deleteBtn {
   width: 40px;
   height: 40px;
-  background: rgb(235, 142, 126);
+  background: $btnDelColor;
   font-weight: bold;
   font-size: 20px;
-  color: white;
-  transition: 0.5s all ease-in-out;
+  color: $textColor;
+  transition: $transition;
 
   &:hover {
-    background: red;
+    background: $btnDelColorHov;
   }
 }
 
 .doneTaskBox {
-  border: 1px solid #464866;
+  border: 1px solid $rowDateColor;
   margin: 2px 0;
   display: flex;
   align-items: center;
@@ -71,10 +73,72 @@ button {
     width: calc(100% - 370px);
   }
 
-  .date {
-    width: 150px;
+  .taskInfo {
+    display: flex;
+
+    .date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+    }
+    .confirmDate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 220px;
+    }
   }
-  .confirmDate {
-    width: 220px;
+}
+
+@media (max-width: 992px) {
+  .taskBox {
+    margin: 2px 4px;
+    flex-direction: column;
+
+    .text {
+      justify-content: center;
+      width: 100%;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+
+    .utility {
+      .deleteBtn {
+        border-top-right-radius: 0;
+      }
+
+      .dateActiv {
+        width: calc(100% - 120px);
+        padding: 0;
+      }
+    }
+  }
+  .deleteBtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .doneTaskBox {
+    margin: 2px;
+    flex-direction: column;
+
+    .text {
+      padding: 10px 0;
+      width: 100%;
+      border-bottom: 1px solid $rowDateColor;
+    }
+
+    .taskInfo {
+      justify-content: space-around;
+      width: 100%;
+      .date {
+        width: 30%;
+        border-right: 1px solid $rowDateColor;
+      }
+      .confirmDate {
+        width: calc(70% - 30px);
+      }
+    }
   }
 }

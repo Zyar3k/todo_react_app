@@ -3,7 +3,7 @@ import "./Task.scss";
 
 const Task = (props) => {
 
-  const importantStyle = { background: "green" };
+  const importantStyle = { background: "#2e8b57", fontWeight: "bold"};
 
   const {
     text,
@@ -42,11 +42,14 @@ const Task = (props) => {
     return (
       <div className="doneTaskBox">
         <div className="text">{text}</div>
-        <div className="date">Zakładany termin {date}</div>
-        <div className="confirmDate">Potwierdzenie wykonania {finishTask}</div>
-        <button onClick={() => props.delete(id)} className="deleteBtn">
-          X
-        </button>
+        <div className='taskInfo'>
+
+          <div className="date">Zakładany termin {date}</div>
+          <div className="confirmDate">Potwierdzenie wykonania {finishTask}</div>
+          <button onClick={() => props.delete(id)} className="deleteBtn">
+            X
+          </button>
+        </div>
       </div>
     );
   }

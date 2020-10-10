@@ -1,24 +1,26 @@
+@import "../../settings.scss";
+
 .activeTasks {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid silver;
+  border-bottom: 2px solid $sectionColor;
+
   .addTaskInfo {
     text-shadow: 0 0 4px black, 0 0 2px white, 0 0 6px white, 0 0 10px white;
     letter-spacing: 6px;
   }
   h2 {
-    border-top: 2px solid silver;
+    border-top: 2px solid $sectionColor;
     text-transform: uppercase;
-    color: white;
     padding: 10px 0;
 
     em {
-      color: grey;
+      color: $sectionColor;
     }
 
     &:hover {
       em {
-        color: white;
+        color: $textColor;
       }
     }
   }
@@ -26,10 +28,10 @@
   .infoRow {
     display: flex;
     text-transform: uppercase;
-    border-top: 1px solid silver;
-    border-bottom: 2px solid silver;
+    border-top: 1px solid $sectionColor;
+    border-bottom: 2px solid $sectionColor;
     letter-spacing: 2px;
-    background: #464866;
+    background: $rowDateColor;
     margin-bottom: 14px;
 
     div {
@@ -51,8 +53,21 @@
 }
 
 .doneTasks {
-  color: silver;
+  color: $sectionColor;
   h3 {
     padding: 10px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .activeTasks {
+    padding-bottom: 10px;
+    h2 {
+      padding: 6px 0;
+    }
+
+    .infoRow {
+      display: none;
+    }
   }
 }

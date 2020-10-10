@@ -1,3 +1,5 @@
+@import "../../settings.scss";
+
 .addTask {
   padding: 10px 0;
   display: flex;
@@ -13,11 +15,10 @@
     border-radius: 8px;
     padding: 8px;
     border: none;
-    background: rgb(210, 215, 240);
+    background: $inputBgdColor;
 
     &:focus {
-      color: white;
-      background: rgba(128, 128, 128, 0.486);
+      background: $sectionColor;
       outline: none;
       font-weight: bold;
     }
@@ -41,12 +42,13 @@
 
     label {
       cursor: pointer;
+      transition: $transition;
       input {
         margin-right: 10px;
       }
 
       &:hover {
-        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+        text-shadow: $txtShadow;
       }
     }
   }
@@ -57,29 +59,54 @@
       input {
         margin-left: 10px;
       }
+      transition: $transition;
     }
 
     &:hover {
       label {
-        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+        text-shadow: $txtShadow;
       }
     }
   }
 
   .btnWrapper {
-    // background: grey;
-
     button {
-      cursor: pointer;
       padding: 10px 20px;
-      background: green;
       border: none;
       border-radius: 8px;
       font-weight: bold;
-      color: white;
+      color: $textColor;
+      transition: $transition;
+      background: $btnAddImpColor;
 
       &:hover {
-        text-shadow: 0 0 2px white, 0 0 6px white, 0 0 10px white;
+        background: $btnAddImpColorHov;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .addTask {
+    padding: 0 6px;
+
+    div {
+      margin: 6px 0;
+    }
+
+    input {
+      border-radius: 8px;
+    }
+
+    label {
+      padding: 0 6px;
+    }
+
+    .inputWrapper {
+      label {
+        input {
+          margin-right: 6px;
+        }
       }
     }
   }

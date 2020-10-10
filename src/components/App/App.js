@@ -11,43 +11,38 @@ class App extends React.Component {
         id: 0,
         text: "Przeczytać 10% książek z mojej listy",
         date: "2020-12-31",
-        highImportant: true,
         important: true,
         active: true,
         finishDate: null,
       },
       {
         id: 1,
-        text: "Awansować do LM",
+        text: "Sprzedać 2 konie",
         date: "2020-12-13",
-        highImportant: false,
         important: false,
         active: true,
         finishDate: null,
       },
       {
         id: 2,
-        text: "Zadanie 2",
+        text: "Chodzić na rękach",
         date: "2020-12-03",
-        highImportant: false,
         important: false,
         active: true,
         finishDate: null,
       },
       {
         id: 3,
-        text: "Zadanie 3",
-        date: "2020-03-04",
-        highImportant: false,
+        text: "Zjeść 10 kg jabłek",
+        date: "2020-09-30",
         important: false,
         active: false,
-        finishDate: null,
+        finishDate: '10.10.2020, 20:31:05',
       },
       {
         id: 4,
         text: "Ukończyć aplikację ToDo w React",
         date: "2020-10-15",
-        highImportant: true,
         important: false,
         active: false,
         finishDate: '10.10.2020, 18:43:47',
@@ -79,7 +74,6 @@ class App extends React.Component {
 
 
   addNewTask = (text, date, important) => {
-    console.log("dodany obiekt");
     const task = {
       id: this.counter,
       text,
@@ -99,7 +93,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <h1>Zadania do zrealizowania</h1>
         <AddTask add={this.addNewTask} />
         <TaskList
