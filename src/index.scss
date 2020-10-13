@@ -10,9 +10,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $darkColor;
-  color: $textColor;
-  letter-spacing: 1px;
+  margin-top: 5vh;
+  background: $mainColor;
+  // min-height: 100vh;
+  //   background: $darkColor;
+  //   color: $textColor;
+  //   letter-spacing: 1px;
 }
-
-

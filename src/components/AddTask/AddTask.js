@@ -54,15 +54,15 @@ class AddTask extends React.Component {
             value={this.state.text}
             onChange={this.handleTextChange}
           />
-          <label htmlFor="important">
+          {/* <label htmlFor="important">
             <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
-            Ważne zadanie
-          </label>
+            Priorytet
+          </label> */}
         </div>
 
         <div className='dateWrapper'>
           <label htmlFor="date">
-            Termin wykonania
+            Termin do wykonania
             <input
               type="date"
               name=""
@@ -76,6 +76,10 @@ class AddTask extends React.Component {
         </div>
 
         <div className="btnWrapper">
+          <label htmlFor="important">
+            <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
+            Priorytet
+          </label>
           <button onClick={this.handleClick}>Dodaj zadanie</button>
         </div>
 

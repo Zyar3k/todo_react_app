@@ -39,13 +39,7 @@ const TaskList = (props) => {
       <div className="activeTasks">
         {activeTasks.length > 0? <div>
           <h2>Aktywne zadania <em>({activeTasks.length})</em></h2>
-          <div className='infoRow'>
-            <div>zadanie</div>
-            <div>termin</div>
-            <div>akcja</div>
-          </div>
         </div> : null}
-
         {activeTasks.length > 0 ? activeTasks : <h1 className="addTaskInfo">Dodaj nowe zadanie</h1>}
       </div>
       <div className="doneTasks">

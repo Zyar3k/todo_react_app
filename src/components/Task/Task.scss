@@ -1,144 +1,73 @@
 @import "../../settings.scss";
 
 .taskBox {
-  margin: 4px 0;
   display: flex;
-  justify-content: space-around;
-  border: 1px solid $rowDateColor;
-  border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4d1aeff;
+  width: 100%;
+  font-size: 24px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px grey;
+
+  &.done {
+    box-shadow: unset;
+    background: rgba(244, 209, 174, 0.2);
+    border-radius: 0;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+  }
 
   .text {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    width: calc(100% - 240px);
-    padding: 10px;
+    padding: 0 10px;
+
+    &.done {
+      font-size: 16px;
+    }
   }
 
   .utility {
     display: flex;
+    align-items: center;
 
-    .btnDone {
-      padding: 0 10px;
-      width: 90px;
-      transition: $transition;
-      background: $btnDoneColor;
-      &:hover {
-        background: $btnDoneColorHov;
-      }
-    }
-
-    .deleteBtn {
-      border-top-right-radius: 6px;
-      border-bottom-right-radius: 6px;
-    }
-
-    .dateActiv {
-      width: 110px;
-      background: $rowDateColor;
+    div {
       padding: 10px;
+    }
+
+    i {
+      cursor: pointer;
+      margin: 6px;
+      font-size: 24px;
+      transition: 0.3s all ease-in-out;
+
+      &.btnDone {
+        color: grey;
+
+        &:hover {
+          color: #083d77ff;
+          text-shadow: 0 0 1px black;
+        }
+      }
+
+      &.deleteBtn {
+        color: #f95738ff;
+
+        &:hover {
+          text-shadow: 0 0 1px black;
+          color: red;
+        }
+      }
+    }
+
+    &.done {
+      font-size: 16px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
     }
   }
 }
 
-button {
-  border: none;
-  cursor: pointer;
-}
-.deleteBtn {
-  width: 40px;
-  height: 40px;
-  background: $btnDelColor;
-  font-weight: bold;
-  font-size: 20px;
-  color: $textColor;
-  transition: $transition;
+// @media (max-width: 992px) {
 
-  &:hover {
-    background: $btnDelColorHov;
-  }
-}
-
-.doneTaskBox {
-  border: 1px solid $rowDateColor;
-  margin: 2px 0;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-
-  .text {
-    width: calc(100% - 370px);
-  }
-
-  .taskInfo {
-    display: flex;
-
-    .date {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 150px;
-    }
-    .confirmDate {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 220px;
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  .taskBox {
-    margin: 2px 4px;
-    flex-direction: column;
-
-    .text {
-      justify-content: center;
-      width: 100%;
-      border-top-right-radius: 6px;
-      border-top-left-radius: 6px;
-    }
-
-    .utility {
-      .deleteBtn {
-        border-top-right-radius: 0;
-      }
-
-      .dateActiv {
-        width: calc(100% - 120px);
-        padding: 0;
-      }
-    }
-  }
-  .deleteBtn {
-    width: 30px;
-    height: 30px;
-  }
-
-  .doneTaskBox {
-    margin: 2px;
-    flex-direction: column;
-
-    .text {
-      padding: 10px 0;
-      width: 100%;
-      border-bottom: 1px solid $rowDateColor;
-    }
-
-    .taskInfo {
-      justify-content: space-around;
-      width: 100%;
-      .date {
-        width: 30%;
-        border-right: 1px solid $rowDateColor;
-      }
-      .confirmDate {
-        width: calc(70% - 30px);
-      }
-    }
-  }
-}
+// }

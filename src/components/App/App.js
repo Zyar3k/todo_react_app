@@ -2,6 +2,7 @@ import React from "react";
 import AddTask from "../AddTask/AddTask";
 import TaskList from "../TaskList/TaskList";
 import "./App.scss";
+import Logo from '../../logo.png';
 
 class App extends React.Component {
   counter = 9
@@ -94,8 +95,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Zadania do zrealizowania</h1>
-        <AddTask add={this.addNewTask} />
+        <span className='header'>
+          <img src={Logo} alt="logo-todo"/>
+          <AddTask add={this.addNewTask} />
+        </span>
         <TaskList
           tasks={this.state.tasks}
           delete={this.deleteTask}

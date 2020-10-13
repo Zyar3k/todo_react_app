@@ -3,7 +3,9 @@ import "./Task.scss";
 
 const Task = (props) => {
 
-  const importantStyle = { background: "#2e8b57", fontWeight: "bold"};
+  const importantStyle = { border: "4px solid #2e8b57", background: '#2e8b5680'};
+
+  // const importantStyle = { background: '#2e8b5680', fontWeight: "bold",};
 
   const {
     text,
@@ -16,39 +18,32 @@ const Task = (props) => {
 
   if (active) {
     return (
-      <div className="taskBox">
-        <div
-          className="text"
-          style={
-            important
-              ? importantStyle
-              : null
-          }
-        >
-          {text}
-        </div>
+      <div className="taskBox"
+        style={
+          important
+            ? importantStyle
+            : null
+        }
+      >
+        <div className="text">{text}</div>
 
         <div className='utility'>
           <div className="dateActiv">{date}</div>
-          <button onClick={() => props.change(id)} className='btnDone'>Wykonane</button>
-          <button onClick={() => props.delete(id)} className="deleteBtn">
-            X
-          </button>
+          <i onClick={() => props.change(id)} className="fas fa-check-double btnDone"></i>
+          <i onClick={() => props.delete(id)} className="far fa-times-circle deleteBtn"></i>
         </div>
       </div>
     );
   } else {
     const finishTask = new Date(finishDate).toLocaleString();
     return (
-      <div className="doneTaskBox">
-        <div className="text">{text}</div>
-        <div className='taskInfo'>
+      <div className="taskBox done">
+        <div className="text done">{text}</div>
+        <div className='utility done'>
 
-          <div className="date">Zakładany termin {date}</div>
-          <div className="confirmDate">Potwierdzenie wykonania {finishTask}</div>
-          <button onClick={() => props.delete(id)} className="deleteBtn">
-            X
-          </button>
+          <div className="date">Termin {date}</div>
+          <div className="confirmDate done">Potwierdzenie wykonania {finishTask}</div>
+          <i onClick={() => props.delete(id)} className="far fa-times-circle deleteBtn"></i>
         </div>
       </div>
     );

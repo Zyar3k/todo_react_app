@@ -1,113 +1,67 @@
 @import "../../settings.scss";
 
 .addTask {
-  padding: 10px 0;
-  display: flex;
-  flex-direction: column;
-
-  div {
-    margin: 10px 0;
-  }
+  padding: 20px 0;
+  flex-grow: 1;
+  text-align: center;
 
   input {
-    height: 40px;
+    height: 50px;
+    padding: 10px;
+    margin: 0 10px;
     font-size: 20px;
-    border-radius: 8px;
-    padding: 8px;
-    border: none;
-    background: $inputBgdColor;
+    outline: none;
+    border: 2px solid #f4d1aeff;
+    border-radius: 10px;
 
     &:focus {
-      background: $sectionColor;
-      outline: none;
-      font-weight: bold;
+      background: #f4d1aeff;
     }
   }
 
   label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
+    font-size: 22px;
   }
 
   .inputWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    input[type="text"] {
-      width: 400px;
-    }
-
-    label {
-      cursor: pointer;
-      transition: $transition;
-      input {
-        margin-right: 10px;
-      }
-
-      &:hover {
-        text-shadow: $txtShadow;
-      }
+    padding: 10px 0;
+    input {
+      width: 50%;
     }
   }
 
   .dateWrapper {
-    label {
-      cursor: pointer;
-      input {
-        margin-left: 10px;
-      }
-      transition: $transition;
-    }
-
-    &:hover {
-      label {
-        text-shadow: $txtShadow;
-      }
-    }
+    padding: 10px 0;
   }
 
   .btnWrapper {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    label {
+      display: flex;
+      align-items: center;
+    }
+
     button {
-      padding: 10px 20px;
+      background: #3cb371;
+      cursor: pointer;
+      box-shadow: 0 0 4px grey;
       border: none;
-      border-radius: 8px;
+      padding: 10px;
+      color: white;
       font-weight: bold;
-      color: $textColor;
-      transition: $transition;
-      background: $btnAddImpColor;
+      border-radius: 10px;
+      transition: 0.3s all ease-in-out;
 
       &:hover {
-        background: $btnAddImpColorHov;
+        background: #2e8b57;
+        box-shadow: 2px 2px 4px#2e8b57;
       }
     }
   }
 }
 
-@media (max-width: 992px) {
-  .addTask {
-    padding: 0 6px;
+// @media (max-width: 992px) {
 
-    div {
-      margin: 6px 0;
-    }
-
-    input {
-      border-radius: 8px;
-    }
-
-    label {
-      padding: 0 6px;
-    }
-
-    .inputWrapper {
-      label {
-        input {
-          margin-right: 6px;
-        }
-      }
-    }
-  }
-}
+// }
