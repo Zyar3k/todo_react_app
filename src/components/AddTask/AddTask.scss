@@ -51,10 +51,12 @@
       padding: 10px;
       color: white;
       font-weight: bold;
+      outline: none;
       border-radius: 10px;
       transition: 0.3s all ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: #2e8b57;
         box-shadow: 2px 2px 4px#2e8b57;
       }
@@ -62,6 +64,14 @@
   }
 }
 
-// @media (max-width: 992px) {
+@media (max-width: 992px) {
+  .addTask {
+    padding: 20px 10px;
 
-// }
+    .inputWrapper {
+      input {
+        width: 80%;
+      }
+    }
+  }
+}

@@ -13,8 +13,20 @@
       box-shadow: 4px 4px 2px grey;
     }
   }
+}
 
-  // @media (max-width: 992px) {
+@media (max-width: 992px) {
+  .app {
+    min-width: 100vw;
 
-  //   }
+    .header {
+      flex-direction: column;
+      img {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        box-shadow: unset;
+      }
+    }
+  }
 }

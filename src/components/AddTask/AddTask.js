@@ -46,7 +46,6 @@ class AddTask extends React.Component {
     maxDate = maxDate + "-12-31";
     return (
       <div className='addTask'>
-
         <div className="inputWrapper">
           <input
             type="text"
@@ -54,12 +53,7 @@ class AddTask extends React.Component {
             value={this.state.text}
             onChange={this.handleTextChange}
           />
-          {/* <label htmlFor="important">
-            <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
-            Priorytet
-          </label> */}
         </div>
-
         <div className='dateWrapper'>
           <label htmlFor="date">
             Termin do wykonania
@@ -74,7 +68,6 @@ class AddTask extends React.Component {
             />
           </label>
         </div>
-
         <div className="btnWrapper">
           <label htmlFor="important">
             <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleImportantChange} />
@@ -82,7 +75,6 @@ class AddTask extends React.Component {
           </label>
           <button onClick={this.handleClick}>Dodaj zadanie</button>
         </div>
-
       </div>
     );
   }

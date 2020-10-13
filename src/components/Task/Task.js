@@ -29,8 +29,10 @@ const Task = (props) => {
 
         <div className='utility'>
           <div className="dateActiv">{date}</div>
-          <i onClick={() => props.change(id)} className="fas fa-check-double btnDone"></i>
-          <i onClick={() => props.delete(id)} className="far fa-times-circle deleteBtn"></i>
+          <span>
+            <i onClick={() => props.change(id)} className="fas fa-check-double btnDone"></i>
+            <i onClick={() => props.delete(id)} className="far fa-times-circle deleteBtn"></i>
+          </span>
         </div>
       </div>
     );

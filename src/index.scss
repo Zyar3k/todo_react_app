@@ -12,8 +12,10 @@ body {
   justify-content: center;
   margin-top: 5vh;
   background: $mainColor;
-  // min-height: 100vh;
-  //   background: $darkColor;
-  //   color: $textColor;
-  //   letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+  body {
+    margin-top: 0;
+  }
 }

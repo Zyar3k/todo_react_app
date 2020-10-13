@@ -70,7 +70,6 @@ class App extends React.Component {
         tasks,
       });
     });
-    console.log("change" + id);
   };
 
 
@@ -85,7 +84,6 @@ class App extends React.Component {
     }
 
     this.counter++;
-    console.log(task, this.counter);
     this.setState(prevState => ({
       tasks: [...prevState.tasks, task]
     }))
