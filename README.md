@@ -1,3 +1,10 @@
+## **LIVE DEMO [DoZrobienia](https://dozrobienia-app.netlify.app/)**
+
+Prosta aplikacja ToDo stworzona w React. Sortowanie zadań, ustawianie priorytetów zadania.
+A simple ToDo application made in React. Sorting tasks, setting task priorities.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
