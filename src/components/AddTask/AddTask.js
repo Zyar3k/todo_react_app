@@ -59,7 +59,7 @@ class AddTask extends React.Component {
         </div>
         <div className='dateWrapper'>
           <label htmlFor="date">
-            Termin do wykonania
+            Termin wykonania
             <input
               type="date"
               name=""
