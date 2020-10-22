@@ -5,22 +5,22 @@ import "./App.scss";
 import Logo from '../../logo.png';
 
 class App extends React.Component {
-  counter = 9
+  counter = 5;
   state = {
     tasks: [
       {
         id: 0,
         text: "Przeczytać 10% książek z mojej listy",
         date: "2020-12-31",
-        important: true,
+        important: false,
         active: true,
         finishDate: null,
       },
       {
         id: 1,
-        text: "Sprzedać 2 konie",
+        text: "Kupić mleko - mój priorytet",
         date: "2020-12-13",
-        important: false,
+        important: true,
         active: true,
         finishDate: null,
       },
@@ -72,7 +72,6 @@ class App extends React.Component {
     });
   };
 
-
   addNewTask = (text, date, important) => {
     const task = {
       id: this.counter,
@@ -89,18 +88,21 @@ class App extends React.Component {
     }))
     return true
 
-  }
+  };
+
   render() {
+    const { addNewTask, deleteTask, doneTask } = this;
+
     return (
       <div className="app">
         <span className='header'>
-          <img src={Logo} alt="logo-todo"/>
-          <AddTask add={this.addNewTask} />
+          <img src={Logo} alt="logo-todo" />
+          <AddTask add={addNewTask} />
         </span>
         <TaskList
           tasks={this.state.tasks}
-          delete={this.deleteTask}
-          change={this.doneTask}
+          deleteTask={deleteTask}
+          change={doneTask}
         />
       </div>
     );

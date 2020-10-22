@@ -2,50 +2,72 @@ import React from "react";
 import Task from "../Task/Task";
 import "./TaskList.scss";
 
-const TaskList = (props) => {
-  let activeTasks = props.tasks.filter((task) => task.active);
-  let doneTasks = props.tasks.filter((task) => !task.active);
+const TaskList = ({ tasks, deleteTask, change }) => {
+  let activeTasks = tasks.filter((task) => task.active);
+  let doneTasks = tasks.filter((task) => !task.active);
 
-  if(activeTasks.length >=2){
-    activeTasks.sort((a,b) => {
-      a= a.text.toLowerCase();
-      b= b.text.toLowerCase();
+  if (activeTasks.length >= 2) {
+    activeTasks.sort((a, b) => {
+      a = a.text.toLowerCase();
+      b = b.text.toLowerCase();
       if (a < b) return -1;
       if (a > b) return 1;
-        return 0
+      return 0
     })
   }
 
-  doneTasks.sort((a,b)=> b.finishDate - a.finishDate);
+  doneTasks.sort((a, b) => b.finishDate - a.finishDate);
 
   activeTasks = activeTasks.map((task) => (
     <Task
       key={task.id}
       task={task}
-      delete={props.delete}
-      change={props.change}
+      delete={deleteTask}
+      change={change}
     />
   ));
+
   doneTasks = doneTasks.map((task) => (
     <Task
       key={task.id}
       task={task}
-      delete={props.delete}
-      change={props.change}
+      delete={deleteTask}
+      change={change}
     />
   ));
+
+  // active section
+  const activeTasksElements = (
+    activeTasks.length > 0 ?
+      <div>
+        <h2>Aktywne zadania <em>({activeTasks.length})</em></h2>
+      </div>
+      : null
+  );
+
+  const activeTasksElementsCondition = (
+    activeTasks.length > 0 ? activeTasks : <h1 className="addTaskInfo">Dodaj nowe zadanie</h1>
+  );
+
+  // done section
+  const numberOfTasks = doneTasks.length;
+
+  const doneTasksElement = (
+    doneTasks.length > 5 && <span>Wyświetlane ostatnie pięć wykonanych zadań</span>
+  );
+
+  const cutList = doneTasks.slice(0, 5);
+
   return (
     <div>
       <div className="activeTasks">
-        {activeTasks.length > 0? <div>
-          <h2>Aktywne zadania <em>({activeTasks.length})</em></h2>
-        </div> : null}
-        {activeTasks.length > 0 ? activeTasks : <h1 className="addTaskInfo">Dodaj nowe zadanie</h1>}
+        {activeTasksElements}
+        {activeTasksElementsCondition}
       </div>
       <div className="doneTasks">
-        <h3>Ukończone zadania <em>({doneTasks.length})</em></h3>
-        {doneTasks.length > 3 && <span>Wyświetlane ostatnie pięć wykonanych zadań</span>}
-        <span className='taskList'>{doneTasks.slice(0, 5)}</span>
+        <h3>Ukończone zadania <em>({numberOfTasks})</em></h3>
+        {doneTasksElement}
+        <span className='taskList'>{cutList}</span>
       </div>
     </div>
   );

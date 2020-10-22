@@ -26,6 +26,7 @@ class AddTask extends React.Component {
       date: event.target.value,
     });
   };
+
   handleClick = () => {
     const { text, checked, date } = this.state;
     if (text.length > 2) {
@@ -38,12 +39,14 @@ class AddTask extends React.Component {
         })
       }
     } else {
-      console.log("Zadanie jest za krótkie");
+      alert("Zadanie jest za krótkie");
     }
   };
+
   render() {
     let maxDate = this.minDate.slice(0, 4) * 1 + 1;
     maxDate = maxDate + "-12-31";
+
     return (
       <div className='addTask'>
         <div className="inputWrapper">
